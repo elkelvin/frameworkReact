@@ -1,0 +1,19 @@
+{
+  "cwd": "C:\\Users\\MANU_\\Documents\\framework7\\QuoteReact",
+  "type": [
+    "web"
+  ],
+  "name": "Quote Look Up",
+  "framework": "react",
+  "template": "single-view",
+  "cssPreProcessor": false,
+  "bundler": "vite",
+  "theming": {
+    "customColor": true,
+    "color": "#c2185b",
+    "darkTheme": false,
+    "iconFonts": true,
+    "fillBars": false
+  },
+  "customBuild": false
+}

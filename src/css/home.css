@@ -1,0 +1,19 @@
+.lc-select>a>.item-content>.item-inner>.item-after {
+    max-width: 100%;
+}
+
+.lc-btnAdd {
+    background-color: var(--f7-theme-color);
+    color: white;
+    transform: translateY(50%)
+}
+
+.lc-organized>ul {
+    display: flex;
+    flex-direction: row-reverse;
+    /* justify-content: space-around; */
+}
+
+.lc-organized>ul>li {
+    width: 100%;
+}

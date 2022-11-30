@@ -1,0 +1,48 @@
+/* Custom color theme properties */
+:root {
+  --f7-theme-color: #c2185b;
+  --f7-theme-color-rgb: 194, 24, 91;
+  --f7-theme-color-shade: #9e0014;
+  --f7-theme-color-tint: #e3001f;
+  --f7-own-color-text-color: #d31145;
+}
+
+.gl-color {
+  color: var(--f7-own-color-text-color);
+}
+
+/* .gl-noAfter>.item-content>.item-inner::after {
+  content: none;
+} */
+
+.gl-mx-0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.gl-mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.gl-mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.gl-mx-3 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.gl-mx-4 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.gl-mx-5 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+/* Your app custom styles here */
