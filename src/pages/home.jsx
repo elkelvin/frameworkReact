@@ -238,6 +238,55 @@ const HomePage = () => (
             </Row>
           </CardContent>
         </Card>
+
+        <Card className="data-table">
+          <table>
+            <thead>
+              <tr>
+                <th class="checkbox-cell">
+                  <Checkbox />
+                </th>
+                <th class="label-cell text-align-center">Part Number</th>
+                <th class="label-cell text-align-center">Description</th>
+                <th class="label-cell text-align-center">Rev</th>
+                <th class="label-cell text-align-center">Material cost</th>
+                <th class="label-cell text-align-center">Labor time</th>
+                <th class="label-cell text-align-center">Validated (Sage PN)</th>
+                <th class="label-cell text-align-center">Modified date</th>
+                <th class="label-cell text-align-center">Notes</th>
+                <th class="label-cell text-align-center">In stock</th>
+                <th class="label-cell text-align-center">Attachments</th>
+              </tr>
+            </thead>
+            <tbody>
+              {warehouse.map((x, i) => (
+                <tr key={i}>
+                  <td class="checkbox-cell">
+                    <Checkbox />
+                  </td>
+                  <td class="label-cell text-align-center">{x.partNo}</td>
+                  <td class="label-cell text-align-center">{x.description}</td>
+                  <td class="label-cell text-align-center">{x.revision}</td>
+                  <td class="label-cell text-align-center">${x.cost}</td>
+                  <td class="label-cell text-align-center">{x.laborTime}</td>
+                  <td class="label-cell text-align-center">XXXXXX</td>
+                  <td class="label-cell text-align-center">
+                    07-11-2022
+                    <a href="#"
+                      class="link tooltip-init profile-link"
+                      data-tooltip="This crate last modification is older than 60 days">
+                      <i class="f7-icons text-color-tpk">info_round_fill</i>
+                    </a>
+                  </td>
+                  <td class="label-cell text-align-center">Lorem ipsum dolor sit amet</td>
+                  <td class="label-cell text-align-center">Yes</td>
+                  <td class="label-cell text-align-center"><a class="button button button-fill color-tpk" onclick="drawing()">3 - View</a></td>
+                </tr>
+              ))}
+
+            </tbody>
+          </table>
+        </Card>
       </Block>
     </Page>
   </Page >
