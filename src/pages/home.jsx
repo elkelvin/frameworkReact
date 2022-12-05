@@ -22,7 +22,8 @@ import {
   CardContent,
   Chip,
   Icon,
-  Toggle
+  Toggle,
+  Checkbox
 } from 'framework7-react';
 
 const warehouse = [
@@ -46,90 +47,170 @@ const tblResults = [
   {
     partNo: "D000000",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia vitae velit non convallis",
+    site: "110-San Jose",
     revision: "1.0",
     cost: 250.00,
     laborTime: 10,
     validated: "XXXXXX",
-    date: new Date(2022, 11, 7),
+    modified: new Date(2022, 11, 7),
     notes: "Lorem ipsum dolor sit amet",
     inStock: true
   },
   {
     partNo: "D000000",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia vitae velit non convallis",
+    site: "110-San Jose",
     revision: "1.0",
-    cost: 250.00,
+    cost: 570.00,
     laborTime: 10,
     validated: "XXXXXX",
-    date: new Date(2022, 11, 7),
+    modified: new Date(2022, 10, 29),
     notes: "Lorem ipsum dolor sit amet",
     inStock: true
   },
   {
     partNo: "D000000",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia vitae velit non convallis",
+    site: "110-San Jose",
     revision: "1.0",
-    cost: 250.00,
+    cost: 570.00,
     laborTime: 10,
     validated: "XXXXXX",
-    date: new Date(2022, 11, 7),
+    modified: new Date(2022, 10, 29),
     notes: "Lorem ipsum dolor sit amet",
     inStock: true
   },
   {
-    partNo: "D000000",
+    partNo: "D000010",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia vitae velit non convallis",
-    revision: "1.0",
-    cost: 250.00,
+    site: "110-San Jose",
+    revision: "2.0",
+    cost: 350.00,
     laborTime: 10,
     validated: "XXXXXX",
-    date: new Date(2022, 11, 7),
+    modified: new Date(2022, 7, 29),
     notes: "Lorem ipsum dolor sit amet",
     inStock: true
   },
   {
-    partNo: "D000000",
+    partNo: "D000010",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia vitae velit non convallis",
+    site: "110-San Jose",
     revision: "1.0",
-    cost: 250.00,
+    cost: 570.00,
     laborTime: 10,
     validated: "XXXXXX",
-    date: new Date(2022, 11, 7),
+    modified: new Date(2022, 10, 31),
     notes: "Lorem ipsum dolor sit amet",
     inStock: true
   },
   {
-    partNo: "D000000",
+    partNo: "D000300",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia vitae velit non convallis",
+    site: "110-San Jose",
     revision: "1.0",
-    cost: 250.00,
+    cost: 570.00,
     laborTime: 10,
     validated: "XXXXXX",
-    date: new Date(2022, 11, 7),
+    modified: new Date(2022, 11, 2),
     notes: "Lorem ipsum dolor sit amet",
     inStock: true
   },
   {
-    partNo: "D000000",
+    partNo: "D000100",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia vitae velit non convallis",
+    site: "110-San Jose",
     revision: "1.0",
-    cost: 250.00,
+    cost: 570.00,
     laborTime: 10,
     validated: "XXXXXX",
-    date: new Date(2022, 11, 7),
+    modified: new Date(2022, 10, 29),
     notes: "Lorem ipsum dolor sit amet",
     inStock: true
   },
   {
+    partNo: "D000052",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia vitae velit non convallis",
+    site: "110-San Jose",
+    revision: "1.0",
+    cost: 570.00,
+    laborTime: 10,
+    validated: "XXXXXX",
+    modified: new Date(2022, 10, 29),
+    notes: "Lorem ipsum dolor sit amet",
+    inStock: true
+  }
+];
+
+
+const tblResults2 = [
+  {
     partNo: "D000000",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia vitae velit non convallis",
     revision: "1.0",
-    cost: 250.00,
     laborTime: 10,
     validated: "XXXXXX",
-    date: new Date(2022, 11, 7),
+    modified: new Date(2022, 11, 7),
     notes: "Lorem ipsum dolor sit amet",
-    inStock: true
+    inStock: true,
+    target: 0,
+    margin: 48,
+    qty: 2,
+    totalMat: 600,
+    totalCost: 880,
+    unitSelling: 1302.4,
+    totalPrice: 2604.8
+  },
+  {
+    partNo: "D000001",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia vitae velit non convallis",
+    revision: "1.0",
+    laborTime: 10,
+    validated: "XXXXXX",
+    modified: new Date(2022, 29, 10),
+    notes: "Lorem ipsum dolor sit amet",
+    inStock: true,
+    target: 0,
+    margin: 48,
+    qty: 5,
+    totalMat: 650,
+    totalCost: 1340,
+    unitSelling: 1983.2,
+    totalPrice: 9916
+  },
+  {
+    partNo: "D000002",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia vitae velit non convallis",
+    revision: "1.0",
+    laborTime: 10,
+    validated: "XXXXXX",
+    modified: new Date(2022, 29, 10),
+    notes: "Lorem ipsum dolor sit amet",
+    inStock: true,
+    target: 0,
+    margin: 48,
+    qty: 3,
+    totalMat: 500,
+    totalCost: 1050,
+    unitSelling: 1554,
+    totalPrice: 4662
+  },
+  {
+    partNo: "D000003",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia vitae velit non convallis",
+    revision: "1.0",
+    laborTime: 10,
+    validated: "XXXXXX",
+    modified: new Date(2022, 29, 10),
+    notes: "Lorem ipsum dolor sit amet",
+    inStock: true,
+    target: 1900,
+    margin: 32.867,
+    qty: 1,
+    totalMat: 370,
+    totalCost: 1430,
+    unitSelling: 1900,
+    totalPrice: 1900.00
   }
 ]
 const HomePage = () => (
@@ -150,7 +231,6 @@ const HomePage = () => (
       <Block inset={true}>
         <Card>
           <CardHeader>
-            <div></div>
             <span className='gl-color'>Search options</span>
           </CardHeader>
           <CardContent>
@@ -239,48 +319,115 @@ const HomePage = () => (
           </CardContent>
         </Card>
 
-        <Card className="data-table">
+        <Card className="data-table data-table-init">
+          <CardHeader>
+            <span className='gl-color'>Search results</span>
+          </CardHeader>
           <table>
             <thead>
               <tr>
-                <th class="checkbox-cell">
+                <th className="checkbox-cell">
                   <Checkbox />
                 </th>
-                <th class="label-cell text-align-center">Part Number</th>
-                <th class="label-cell text-align-center">Description</th>
-                <th class="label-cell text-align-center">Rev</th>
-                <th class="label-cell text-align-center">Material cost</th>
-                <th class="label-cell text-align-center">Labor time</th>
-                <th class="label-cell text-align-center">Validated (Sage PN)</th>
-                <th class="label-cell text-align-center">Modified date</th>
-                <th class="label-cell text-align-center">Notes</th>
-                <th class="label-cell text-align-center">In stock</th>
-                <th class="label-cell text-align-center">Attachments</th>
+                <th className="label-cell text-align-center">Part Number</th>
+                <th className="label-cell text-align-center">Description</th>
+                <th className="label-cell text-align-center">Site</th>
+                <th className="numeric-cell text-align-center">Rev</th>
+                <th className="numeric-cell text-align-center">Material cost</th>
+                <th className="numeric-cell text-align-center">Labor time</th>
+                <th className="label-cell text-align-center">Validated (Sage PN)</th>
+                <th className="label-cell text-align-center">Modified date</th>
+                <th className="label-cell text-align-center">Notes</th>
+                <th className="numeric-cell text-align-center">In stock</th>
+                <th className="label-cell text-align-center">Attachments</th>
               </tr>
             </thead>
             <tbody>
-              {warehouse.map((x, i) => (
+              {tblResults.map((x, i) => (
                 <tr key={i}>
-                  <td class="checkbox-cell">
+                  <td className="checkbox-cell">
                     <Checkbox />
                   </td>
-                  <td class="label-cell text-align-center">{x.partNo}</td>
-                  <td class="label-cell text-align-center">{x.description}</td>
-                  <td class="label-cell text-align-center">{x.revision}</td>
-                  <td class="label-cell text-align-center">${x.cost}</td>
-                  <td class="label-cell text-align-center">{x.laborTime}</td>
-                  <td class="label-cell text-align-center">XXXXXX</td>
-                  <td class="label-cell text-align-center">
-                    07-11-2022
-                    <a href="#"
-                      class="link tooltip-init profile-link"
-                      data-tooltip="This crate last modification is older than 60 days">
-                      <i class="f7-icons text-color-tpk">info_round_fill</i>
-                    </a>
+                  <td className="label-cell text-align-center">{x.partNo}</td>
+                  <td className="label-cell text-align-center">{x.description}</td>
+                  <td className="label-cell text-align-center">{x.site}</td>
+                  <td className="numeric-cell text-align-center">{x.revision}</td>
+                  <td className="numeric-cell text-align-center">${x.cost}</td>
+                  <td className="numeric-cell text-align-center">{x.laborTime}</td>
+                  <td className="label-cell text-align-center">{x.validated}</td>
+                  <td className="label-cell text-align-center">{x.modified.toLocaleDateString()}</td>
+                  <td className="label-cell text-align-center">{x.notes}</td>
+                  <td className="checkbox-cell text-align-center"> <Checkbox defaultValue={x.inStock} /></td>
+                  <td className="label-cell text-align-center">3 - View</td>
+                </tr>
+              ))}
+
+            </tbody>
+          </table>
+        </Card>
+
+        <Block strong inset>
+          <Button fill>Search</Button>
+        </Block>
+
+        <Card className="data-table data-table-init">
+          <CardHeader>
+            <span className='gl-color'>Search results</span>
+          </CardHeader>
+          <table>
+            <thead>
+              <tr>
+                <th className="checkbox-cell">
+                  <Checkbox />
+                </th>
+                <th className="label-cell text-align-center">Part Number</th>
+                <th className="label-cell text-align-center">Description</th>
+                <th className="numeric-cell text-align-center">Rev</th>
+                <th className="numeric-cell text-align-center">Labor time</th>
+                <th className="label-cell text-align-center">Validated (Sage PN)</th>
+                <th className="label-cell text-align-center">Modified date</th>
+                <th className="label-cell text-align-center">Notes</th>
+                <th className="numeric-cell text-align-center">In stock</th>
+                <th className="label-cell text-align-center">Attachments</th>
+                <th className="label-cell text-align-center">Target price</th>
+                <th className="label-cell text-align-center">Gross margin %</th>
+                <th className="label-cell text-align-center">Qty</th>
+                <th className="label-cell text-align-center">Total mat cost</th>
+                <th className="label-cell text-align-center">Total cost</th>
+                <th className="label-cell text-align-center">Unit selling price</th>
+                <th className="label-cell text-align-center"><strong>Total price</strong></th>
+              </tr>
+            </thead>
+            <tbody>
+              {tblResults2.map((x, i) => (
+                <tr key={i}>
+                  <td className="checkbox-cell">
+                    <Checkbox />
                   </td>
-                  <td class="label-cell text-align-center">Lorem ipsum dolor sit amet</td>
-                  <td class="label-cell text-align-center">Yes</td>
-                  <td class="label-cell text-align-center"><a class="button button button-fill color-tpk" onclick="drawing()">3 - View</a></td>
+                  <td className="label-cell text-align-center">{x.partNo}</td>
+                  <td className="label-cell text-align-center gl-color">Read</td>
+                  <td className="numeric-cell text-align-center">{x.revision}</td>
+                  <td className="numeric-cell text-align-center">{x.laborTime}</td>
+                  <td className="label-cell text-align-center">{x.validated}</td>
+                  <td className="label-cell text-align-center">{x.modified.toLocaleDateString()}</td>
+                  <td className="label-cell text-align-center gl-color">Read</td>
+                  <td className="checkbox-cell text-align-center">
+                    <Checkbox defaultValue={x.inStock} />
+                  </td>
+                  <td className="label-cell text-align-center">3 - View</td>
+                  <td className="input-cell text-align-center"> <div className="input" style={{ width: '50px' }}>
+                    <input type="number" placeholder="Filter" value={x.target} />
+                  </div></td>
+                  <td className="input-cell text-align-center">< div className="input" style={{ width: '50px' }}>
+                    <input type="number" placeholder="Filter" value={x.margin} />
+                  </div></td>
+                  <td className="input-cell text-align-center"> <div className="input" style={{ width: '50px' }}>
+                    <input type="number" placeholder="Filter" value={x.qty} />
+                  </div></td>
+                  <td className="numeric-cell text-align-center">{x.totalCost}</td>
+                  <td className="numeric-cell text-align-center">{x.totalCost}</td>
+                  <td className="numeric-cell text-align-center">{x.unitSelling}</td>
+                  <td className="numeric-cell text-align-center">{x.totalPrice}</td>
                 </tr>
               ))}
 
