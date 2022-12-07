@@ -213,6 +213,15 @@ const tblResults2 = [
     totalPrice: 1900.00
   }
 ]
+
+const onChange = (event, index) => {
+  console.log("Result", tblResults2[index].inStock);
+  tblResults2[index].inStock = !tblResults2[index].inStock;  
+}
+
+const onChangeInput = (event) => {
+
+}
 const HomePage = () => (
   <Page name="home">
     {/* Top Navbar */}
@@ -357,7 +366,9 @@ const HomePage = () => (
                   <td className="label-cell text-align-center">{x.validated}</td>
                   <td className="label-cell text-align-center">{x.modified.toLocaleDateString()}</td>
                   <td className="label-cell text-align-center">{x.notes}</td>
-                  <td className="checkbox-cell text-align-center"> <Checkbox defaultValue={x.inStock} /></td>
+                  <td className="checkbox-cell text-align-center">
+                    <Checkbox onChange={(e) => onChange(e)} />
+                  </td>
                   <td className="label-cell text-align-center">3 - View</td>
                 </tr>
               ))}
@@ -412,17 +423,17 @@ const HomePage = () => (
                   <td className="label-cell text-align-center">{x.modified.toLocaleDateString()}</td>
                   <td className="label-cell text-align-center gl-color">Read</td>
                   <td className="checkbox-cell text-align-center">
-                    <Checkbox defaultValue={x.inStock} />
+                    <Checkbox onChange={(e) => onChange(e, i)} checked={x.inStock} />
                   </td>
                   <td className="label-cell text-align-center">3 - View</td>
                   <td className="input-cell text-align-center"> <div className="input" style={{ width: '50px' }}>
-                    <input type="number" placeholder="Filter" value={x.target} />
+                    <input type="number" placeholder="Filter" value={x.target} onChange={onChangeInput} />
                   </div></td>
                   <td className="input-cell text-align-center">< div className="input" style={{ width: '50px' }}>
-                    <input type="number" placeholder="Filter" value={x.margin} />
+                    <input type="number" placeholder="Filter" value={x.margin} onChange={onChangeInput} />
                   </div></td>
                   <td className="input-cell text-align-center"> <div className="input" style={{ width: '50px' }}>
-                    <input type="number" placeholder="Filter" value={x.qty} />
+                    <input type="number" placeholder="Filter" value={x.qty} onChange={onChangeInput} />
                   </div></td>
                   <td className="numeric-cell text-align-center">{x.totalCost}</td>
                   <td className="numeric-cell text-align-center">{x.totalCost}</td>
